@@ -18,7 +18,7 @@ public class SecondServelet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("init() method 호출");
 	}
-
+	
 	/**
 	 * @see Servlet#destroy()
 	 */
@@ -32,5 +32,4 @@ public class SecondServelet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("service() method 호출");
 	}
-
 }
