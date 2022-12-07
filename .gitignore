@@ -1,6 +1,8 @@
 # ckkim adds
 Exercise.java
 mysql.properties
+*.jar
+*.war
 
 .metadata/
 bin/
