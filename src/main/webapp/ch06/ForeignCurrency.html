@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreign currency</title>
+</head>
+<body style="margin: 40px;">
+    <h1>환율 계산기</h1>
+    <hr>
+    <form action="/jw/ch06/currency" method="get">
+        금액: <input type="text" name="won">
+        <select name="currency">
+            <option value="0" selected>달러(USD)</option>
+            <option value="1">유로(EURO)</option>
+            <option value="2">엔(YEN)</option>
+            <option value="3">위안(CNY)</option>
+        </select>
+        <input type="submit" value="변환">
+    </form>
+    <br>    
+    <button onclick="location.href='/jw/ch06/ForeignCurrency.html'">재실행</button>
+</body>
+</html>
