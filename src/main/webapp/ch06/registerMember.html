@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Member</title>
+</head>
+<body style="margin: 40px;">
+    <h1>회원 가입</h1>
+    <hr>
+    <form action="/jw/ch06/regMember" method="post">   
+        uid: <input type="text" name="uid" placeholder="ID">    <br><br>
+        pwd: <input type="password" name="pwd" placeholder="비밀번호">  <br><br>
+        pwd2: <input type="password" name="pwd2" placeholder="비밀번호 재확인"> <br><br>
+        성명: <input type="text" name="name" placeholder="이름">    <br><br>
+        생년월일: <input type="text" name="birthday" placeholder="생년월일 ex)2000-01-01">  <br><br>
+        email: <input type="email" name="email" >   <br><br>
+        성별: <input type="radio" name="gender" value="0" checked> 남자
+        <input type="radio" name="gender" value="1"> 여자 <br><br>
+        취미: <input type="checkbox" name="hobby" value="코딩" checked> 코딩
+        <input type="checkbox" name="hobby" value="운동"> 운동
+        <input type="checkbox" name="hobby" value="악기연주"> 악기연주
+        <input type="checkbox" name="hobby" value="독서"> 독서
+        <input type="checkbox" name="hobby" value="TV(유튜브)"> TV(유튜브)   <br><br>
+        <input type="submit" value="확인">  
+    </form>
+</body>
+</html>
