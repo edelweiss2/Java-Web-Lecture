@@ -18,10 +18,11 @@ public class ThirdServelet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<!DOCTYPE html>");
-		out.print("<html lang=\"en\">");
+		out.print("<html lang=\"ko\">");
 		out.print("<head>");
 		out.print("<meta charset=\"UTF-8\">");
 		out.print("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
