@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Customer</title>
+    <style>
+        td { text-align: center; padding: 3px;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h1>회원 수정</h1>
+    <hr>
+    <form action="/jw/ch07/updateCustomer" method="post">
+        <table>
+            <tr>
+                <td>사용자 ID</td>
+                <td><input type="text" name="uid" value="" disabled></td>
+            </tr>
+            <tr>
+                <td>사용자명</td>
+                <td><input type="text" name="uname" value=""></td>
+            </tr>
+            <tr>
+                <td>가입일자</td>
+                <td><input type="text" name="regDate" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="가입"></td>
+            </tr>
+        </table>
+    </form>   
+</body>
+</html>

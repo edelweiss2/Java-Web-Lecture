@@ -1,16 +1,12 @@
 package ch07;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -41,7 +37,7 @@ public class CustomerDao {
 			//delete 대상 대신에 isDeleted 필드를 1로 변경하는 것으로 대신함
 			pStmt.executeUpdate();
 			pStmt.close();
-			conn.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,7 +57,7 @@ public class CustomerDao {
 			//Update 실행
 			pStmt.executeUpdate();
 			pStmt.close();
-			conn.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -85,7 +81,7 @@ public class CustomerDao {
 			}
 			rs.close();
 			pStmt.close();
-			conn.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -112,7 +108,7 @@ public class CustomerDao {
 			}
 			rs.close();
 			stmt.close();
-			conn.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -129,7 +125,7 @@ public class CustomerDao {
 			
 			pStmt.executeUpdate();
 			pStmt.close();
-			conn.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 

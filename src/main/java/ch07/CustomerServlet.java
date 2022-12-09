@@ -20,11 +20,6 @@ public class CustomerServlet extends HttpServlet {
 		CustomerDao dao = new CustomerDao();
 		List<Customer> list = dao.getCustomers();
 		
-		String data = "";
-		for (Customer c : list) {
-			data += c.toString() + "\n";
-		}
-		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
@@ -40,18 +35,32 @@ public class CustomerServlet extends HttpServlet {
 		out.print("<h1>회원 리스트</h1>");
 		out.print("<hr>");		
 		
-		String[] pList = data.split("\n");
-		for (String p : pList) {
-			out.print("		<p>" + p + "</p>");
-		}
+		String data = "    <table>"
+				+ "        <tr>"
+				+ "            <th>사용자ID</th>"
+				+ "            <th>사용자 이름</th>"
+				+ "            <th>가입 날짜</th>"
+				+ "            <th>액션 </th>                  "
+				+ "        </tr>";
 		
+		out.print(data);
+		
+		for (Customer c : list) {
+			out.print("		<tr>");
+			out.print("			<td>" + c.getUid() + "</td>");
+			out.print("			<td>" + c.getUname() + "</td>");
+			out.print("			<td>" + c.getRegDate().toString() + "</td>");
+			out.print("         <td>" + "<a href=\"/jw/ch07/deleteCustomer?uid=" + c.getUid() + "\">수정</a>"
+					+ "<a href=\"/jw/ch07/deleteCustomer?uid=" + c.getUid() + "\">삭제</a>"+ "</td>");
+			out.print("		</tr>");
+		}
+		out.print("</table>");
 		out.print("<br>");
+		out.print("<a href=\"/jw/ch07/registerCustomer.html\">회원 가입</a>");	
 		out.print("</body>");
 		out.print("</html>");
 		
 	}
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
