@@ -12,20 +12,27 @@
 <body style="margin: 40px;">
     <h1>회원 수정</h1>
     <hr>
-    <form action="/jw/ch07/updateCustomer" method="post">
-        <input type="hidden" name="uid" value="">
+    <form action="/jw/ch07/updateCustomer" method="post">        
         <table>
             <tr>
-                <td>사용자 ID</td>
-                <td><input type="text" name="uid" value=""disabled></td>
+                <td>등번호</td>
+                <td><input type="text" name="backNum" value=""></td>
             </tr>
             <tr>
-                <td>사용자명</td>
+                <td>선수 이름</td>
                 <td><input type="text" name="uname" value=""></td>
             </tr>
             <tr>
-                <td>가입일자</td>
-                <td><input type="text" name="regDate" value="" disabled></td>
+                <td>포지션</td>
+                <td><input type="text" name="regDate" value="" ></td>
+            </tr>
+            <tr>
+                <td>생일</td>
+                <td><input type="text" name="regDate" value="" ></td>
+            </tr>
+            <tr>
+                <td>키</td>
+                <td><input type="text" name="regDate" value="" ></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="가입"></td>

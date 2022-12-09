@@ -50,7 +50,7 @@ public class CustomerServlet extends HttpServlet {
 			out.print("			<td>" + c.getUid() + "</td>");
 			out.print("			<td>" + c.getUname() + "</td>");
 			out.print("			<td>" + c.getRegDate().toString() + "</td>");
-			out.print("         <td>" + "<a href=\"/jw/ch07/deleteCustomer?uid=" + c.getUid() + "\">수정</a>"
+			out.print("         <td>" + "<a href=\"/jw/ch07/updateCustomer?uid=" + c.getUid() + "\">수정</a>&nbsp;&nbsp;"
 					+ "<a href=\"/jw/ch07/deleteCustomer?uid=" + c.getUid() + "\">삭제</a>"+ "</td>");
 			out.print("		</tr>");
 		}

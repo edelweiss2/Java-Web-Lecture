@@ -46,13 +46,11 @@ public class CustomerDao {
 	
 	public void updateCustomer(Customer c) {
 		Connection conn = getConnection();
-		String sql = "UPDATE customer SET name = ?, regDate = ?, isDeleted = ? WHERE uid = ?;";
+		String sql = "UPDATE customer SET name = ? WHERE uid = ?;";
 		try {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, c.getUname());
-			pStmt.setString(2, c.getRegDate().toString());
-			pStmt.setInt(3, c.getIsDeleted());
-			pStmt.setString(4, c.getUid());			//앞에 ?(변수값) 를 순서대로 1번부터
+			pStmt.setString(2, c.getUid());			//앞에 ?(변수값) 를 순서대로 1번부터
 			
 			//Update 실행
 			pStmt.executeUpdate();
