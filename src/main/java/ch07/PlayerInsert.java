@@ -36,7 +36,7 @@ public class PlayerInsert extends HttpServlet {
 		if(p.getName() != null)
 			response.sendRedirect("/jw/ch07/registerPlayer.html");
 		else {
-			p = new Player(backNumber, name);
+			p = new Player(backNumber, name, position, bDay, height);
 			dao.insertPlayer(p);
 		
 			response.sendRedirect("/jw/ch07/playerList");

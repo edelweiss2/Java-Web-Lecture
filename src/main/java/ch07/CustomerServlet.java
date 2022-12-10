@@ -20,7 +20,7 @@ public class CustomerServlet extends HttpServlet {
 		CustomerDao dao = new CustomerDao();
 		List<Customer> list = dao.getCustomers();
 		
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<!DOCTYPE html>");
@@ -34,16 +34,10 @@ public class CustomerServlet extends HttpServlet {
 		out.print("<body style=\"margin:40px;\">");
 		out.print("<h1>회원 리스트</h1>");
 		out.print("<hr>");		
-		
-		String data = "    <table>"
-				+ "        <tr>"
-				+ "            <th>사용자ID</th>"
-				+ "            <th>사용자 이름</th>"
-				+ "            <th>가입 날짜</th>"
-				+ "            <th>액션 </th>                  "
-				+ "        </tr>";
-		
-		out.print(data);
+		out.print("	  <table border=\"1\">");
+		out.print("	    <tr>");
+		out.print("	      <th>사용자ID</th><th>사용자명</th><th>가입일</th><th>액션</th>");
+		out.print("	    </tr>");
 		
 		for (Customer c : list) {
 			out.print("		<tr>");

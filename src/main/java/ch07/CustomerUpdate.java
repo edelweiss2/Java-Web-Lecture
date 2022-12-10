@@ -22,7 +22,7 @@ public class CustomerUpdate extends HttpServlet {
 		CustomerDao dao = new CustomerDao();
 		Customer c = dao.getCustomer(uid);
 		
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		String data = "<!DOCTYPE html>"

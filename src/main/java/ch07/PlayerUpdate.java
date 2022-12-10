@@ -23,7 +23,7 @@ public class PlayerUpdate extends HttpServlet {
 		
 		PlayerDao dao = new PlayerDao();
 		Player p = dao.getPlayer(backNumber);
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
@@ -41,7 +41,7 @@ public class PlayerUpdate extends HttpServlet {
 				+ "<body style=\"margin: 40px;\">"
 				+ "    <h1>선수 수정</h1>"
 				+ "    <hr>"
-				+ "    <form action=\"/jw/ch07/registerPlayer\" method=\"post\"> "
+				+ "    <form action=\"/jw/ch07/updatePlayer\" method=\"post\"> "
 				+ "        <table>"
 				+ "            <tr>"
 				+ "                <td>등번호</td>";

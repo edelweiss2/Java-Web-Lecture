@@ -20,7 +20,7 @@ public class PlayerServlet extends HttpServlet {
 		PlayerDao dao = new PlayerDao();
 		List<Player> list = dao.getPlayers();
 		
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<!DOCTYPE html>");
