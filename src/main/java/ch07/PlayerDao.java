@@ -121,5 +121,23 @@ public class PlayerDao {
 		return list;
 	}
 	
+	public void insertPlayer(Player p) {
+		Connection conn = getConnection();
+		String sql = "INSERT INTO player VALUES (?, ?, ?, ?, ?,default);";
+		try {
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setInt(1, p.getBackNumber());
+			pStmt.setString(2, p.getName());
+			pStmt.setString(3, p.getPosition());
+			pStmt.setString(4, p.getBday().toString());
+			pStmt.setInt(5, p.getHeight());
+						
+			pStmt.executeUpdate();
+			pStmt.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
 	
 }

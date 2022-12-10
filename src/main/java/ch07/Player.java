@@ -12,6 +12,22 @@ public class Player {
 	
 	Player() {}
 
+	Player(int backNumber, String name, String position, LocalDate bday, int height) {
+		super();
+		this.backNumber = backNumber;
+		this.name = name;
+		this.position = position;
+		this.bday = bday;
+		this.height = height;
+	}
+
+
+	Player(int backNumber, String name) {
+		super();
+		this.backNumber = backNumber;
+		this.name = name;
+	}
+
 	Player(int backNumber, String name, String position, LocalDate bday, int height, int isDeleted) {
 		super();
 		this.backNumber = backNumber;
