@@ -67,7 +67,7 @@ public class PlayerUpdate extends HttpServlet {
 				+ "                <td colspan=\"2\"><input type=\"submit\" value=\"수정\"></td>"
 				+ "            </tr>"
 				+ "        </table>"
-				+ "    </form>   "
+				+ "    </form>"
 				+ "</body>"
 				+ "</html>";
 		out.print(data);
