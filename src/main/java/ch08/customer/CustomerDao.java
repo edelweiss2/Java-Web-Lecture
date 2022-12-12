@@ -1,4 +1,4 @@
-package customer;
+package ch08.customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Customer</title>
+    <style>
+        td { text-align: center; padding: 3px;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h1>선수 등록</h1>
+    <hr>
+    <form action="/jw/ch07/registerPlayer" method="post">        
+        <table>
+            <tr>
+                <td>등번호</td>
+                <td><input type="text" name="backNumber" value=""></td>
+            </tr>
+            <tr>
+                <td>선수 이름</td>
+                <td><input type="text" name="name" value=""></td>
+            </tr>
+            <tr>
+                <td>포지션</td>
+                <td><input type="text" name="position" value="" ></td>
+            </tr>
+            <tr>
+                <td>생일</td>
+                <td><input type="text" name="bDay" value="" ></td>
+            </tr>
+            <tr>
+                <td>키</td>
+                <td><input type="text" name="height" value="" ></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="선수등록"></td>
+            </tr>
+        </table>
+    </form>   
+</body>
+</html>

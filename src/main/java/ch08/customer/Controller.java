@@ -1,4 +1,4 @@
-package customer;
+package ch08.customer;
 
 import java.io.IOException;
 import java.util.List;
