@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 목록</title>
+    <style>
+        td { text-align: center; padding: 3px;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h1>사용자 목록</h1>
+    <button onclick="location.href='/jw/ch09/users/login.html'">로그인</button>
+    <button onclick="location.href='/jw/ch09/users/logout'">로그아웃</button>   
+    <hr>
+    <table border="1">
+        <tr>
+            <th>UID</th>
+            <th>PWD</th>
+            <th>NAME</th>
+            <th>Email</th>
+            <th>등록일</th>
+            <th>액션</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> <button onclick="location.href='/jw/ch09/users/update?uid='">수정</button>
+                 <button onclick="location.href='/jw/ch09/users/delete?uid='"disabled>삭제</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a href="/jw/ch09/users/list.html">회원 가입</a>
+</body>
+</html>
