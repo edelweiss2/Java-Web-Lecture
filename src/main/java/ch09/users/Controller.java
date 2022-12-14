@@ -18,16 +18,16 @@ import org.mindrot.jbcrypt.BCrypt;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet(
-		name = "UserController", 
-		urlPatterns = { 
-				"/ch09/users/list", 
-				"/ch09/users/login",
-				"/ch09/users/logout",
-				"/ch09/users/register",
-				"/ch09/users/update",
-				"/ch09/users/delete"
-		})
+//@WebServlet(
+//		name = "UserController", 
+//		urlPatterns = { 
+////				"/ch09/users/list", 
+////				"/ch09/users/login",
+////				"/ch09/users/logout",
+////				"/ch09/users/register",
+////				"/ch09/users/update",
+////				"/ch09/users/delete"
+//		})
 public class Controller extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,6 +41,11 @@ public class Controller extends HttpServlet {
 			request.setAttribute("userList", list);
 			RequestDispatcher rd = request.getRequestDispatcher("/ch09/users/listView");
 			rd.forward(request, response);
+		}  else if (requestUri.contains("logout")) {
+			System.out.println(session.getAttribute("uid"));
+			System.out.println(session.getAttribute("uname"));
+			session.invalidate();
+			response.sendRedirect("/jw/ch09/users/list");
 		} else if (requestUri.contains("register")){
 			response.sendRedirect("/jw/ch09/users/register.html");
 		} else if (requestUri.contains("update")) {
@@ -52,11 +57,6 @@ public class Controller extends HttpServlet {
 		} else if (requestUri.contains("delete")) {
 			String uid = request.getParameter("uid");
 			dao.deleteUser(uid);
-			response.sendRedirect("/jw/ch09/users/list");
-		}  else if (requestUri.contains("logout")) {
-			System.out.println(session.getAttribute("uid"));
-			System.out.println(session.getAttribute("uname"));
-			session.invalidate();
 			response.sendRedirect("/jw/ch09/users/list");
 		} else {
 			System.out.println("get 잘못된 경로 입니다.");

@@ -41,6 +41,7 @@ public class UpdateViewer2 extends HttpServlet {
 				+ "        <table>"
 				+ "            <tr>"
 				+ "                <td>UID</td>";
+		data += "<input type=\"hidden\" name=\"uid\" value=\"" + u.getUid() + "\">";
 		data += "<td><input type=\"text\" name=\"uid\" value=\""+ u.getUid() +"\"></td>";
 		data += "            </tr>"
 				+ "            <tr>"
