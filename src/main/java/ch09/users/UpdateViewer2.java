@@ -24,45 +24,43 @@ public class UpdateViewer2 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String data = "<!DOCTYPE html>"
-				+ "<html lang=\"ko\">"
-				+ "<head>"
-				+ "    <meta charset=\"UTF-8\">"
-				+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
-				+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-				+ "    <title>Register User</title>"
-				+ "    <style>"
-				+ "        td { text-align: center; padding: 3px;}"
-				+ "    </style>"
-				+ "</head>"
-				+ "<body style=\"margin: 40px;\">"
-				+ "    <h1>사용자 등록</h1>"
-				+ "    <hr>"
-				+ "    <form action=\"/jw/ch09/users/update\" method=\"post\">        "
-				+ "        <table>"
-				+ "            <tr>"
-				+ "                <td>UID</td>";
+				 	+ "<html lang=\"ko\">" 
+				 	+ "<head>"
+				 	+ "    <meta charset=\"UTF-8\">"
+				 	+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+				 	+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+				 	+ "    <title>회원 수정</title>"
+				 	+ "    <style>"
+				 	+ "        td { text-align: center; padding: 3px; }"
+				 	+ "    </style>"
+				 	+ "</head>"
+				 	+ "<body style=\"margin: 40px;\">"
+				 	+ "    <h1>회원 수정</h1>"
+				 	+ "    <hr>"
+				 	+ "    <form action=\"/jw/ch09/users/update\" method=\"post\">";
 		data += "<input type=\"hidden\" name=\"uid\" value=\"" + u.getUid() + "\">";
-		data += "<td><input type=\"text\" name=\"uid\" value=\""+ u.getUid() +"\"></td>";
+		data += "        <table>"
+				+ "            <tr>"
+				+ "                <td>아이디:</td>";
+		data += "<td><input type=\"text\" name=\"uid\" value=\"" + u.getUid() + "\" disabled></td>";
 		data += "            </tr>"
 				+ "            <tr>"
-				+ "                <td>PWD</td>";
-		data += "<td><input type=\"text\" name=\"pwd\" value=\""+ u.getPwd()+"\"></td>";
-		data += "</tr>"
+				+ "                <td>이름:</td>";
+		data += "<td><input type=\"text\" name=\"uname\" value=\"" + u.getUname() + "\"></td>";
+		data += "            </tr>"
 				+ "            <tr>"
-				+ "                <td>이름</td>";
-		data += "<td><input type=\"text\" name=\"name\" value=\""+u.getUname()+"\" ></td>";
-		data += "</tr>"
+				+ "                <td>이메일:</td>";
+		data += "<td><input type=\"email\" name=\"email\" value=\"" + u.getEmail() + "\"></td>";
+		data += "            </tr>"
 				+ "            <tr>"
-				+ "                <td>Email</td>";
-		data += "<td><input type=\"text\" name=\"email\" value=\""+u.getEmail()+"\" ></td>";
-		data += " </tr>";						
-		data += "            <tr>"
-				+ "                <td colspan=\"2\"><input type=\"submit\" value=\"사용자등록\"></td>"
+				+ "                <td colspan=\"2\"><input type=\"submit\" value=\"수정\">"
+				+ "                <input type=\"reset\" value=\"취소\"></td>"
 				+ "            </tr>"
 				+ "        </table>"
 				+ "    </form>"
 				+ "</body>"
 				+ "</html>";
+				 	
 		out.print(data);
 	}
 

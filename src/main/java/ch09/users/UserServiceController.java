@@ -2,6 +2,7 @@ package ch09.users;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,35 +34,15 @@ public class UserServiceController extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String uid = null, pwd = null, email = null, uname = null;
 		User u = null;
+		RequestDispatcher rd = null;
 
 		switch (action) {
 		case "list":
-			uid = request.getParameter("uid");
-			pwd = request.getParameter("pwd");
-			u = dao.getUserInfo(uid);
-
-			if (u.getUid() != null) {
-				if (BCrypt.checkpw(pwd, u.getPwd())) {
-					session.setAttribute("uid", u.getUid());
-					session.setAttribute("uname", u.getUname());
-
-					out.print("<script>");
-					out.print("alert('" + u.getUname() + "님 환영합니다." + "');");
-					out.print("location.href = '" + "/jw/ch09/users/list" + "';");
-					out.print("</script>");
-				} else { // 패스워드가 틀린경우
-					out.print("<script>");
-					out.print("alert('잘못된 패스워드 입니다.');");
-					out.print("location.href = '" + "/jw/ch09/users/login.html" + "';");
-					out.print("</script>");
-				}
-			} else { // id 없음
-				out.print("<script>");
-				out.print("alert('회원 가입 페이지로 이동합니다.')");
-				out.print("location.href = '" + "/jw/ch09/users/register.html" + "';");
-				out.print("</script>");
-			}
-			break;
+			List<User> list = dao.listUsers();
+			request.setAttribute("userList", list);
+			rd = request.getRequestDispatcher("/ch09/users/listView");
+			rd.forward(request, response);
+			break;			
 		case "login":
 			uid = request.getParameter("uid");
 			pwd = request.getParameter("pwd");
@@ -73,26 +54,25 @@ public class UserServiceController extends HttpServlet {
 					session.setAttribute("uid", u.getUid());
 					session.setAttribute("uname", u.getUname());
 
-					out.print("<script>");
-					out.print("alert('" + u.getUname() + "님 환영합니다." + "');");
-					out.print("location.href = '" + "/jw/ch09/users/list" + "';");
-					out.print("</script>");
-				} else { // 패스워드가 틀린경우
-					out.print("<script>");
-					out.print("alert('잘못된 패스워드 입니다.');");
-					out.print("location.href = '" + "/jw/ch09/users/login.html" + "';");
-					out.print("</script>");
+					request.setAttribute("msg", u.getUname() + "님 환영합니다.");
+					request.setAttribute("url", "/jw/ch09/users/list");
+					rd = request.getRequestDispatcher("/ch09/users/alertMsg.jsp");
+					rd.forward(request, response);
+				} else { 
+					// 패스워드가 틀린경우
+					request.setAttribute("msg", "잘못된 패스워드 입니다. 다시 입력하세요.");
+					request.setAttribute("url", "/jw/ch09/users/login.html");
+					rd = request.getRequestDispatcher("/ch09/users/alertMsg.jsp");
+					rd.forward(request, response);
 				}
 			} else { // id 없음
-				out.print("<script>");
-				out.print("alert('회원 가입 페이지로 이동합니다.')");
-				out.print("location.href = '" + "/jw/ch09/users/register.html" + "';");
-				out.print("</script>");
+				request.setAttribute("msg", "회원 가입 페이지로 이동합니다.");
+				request.setAttribute("url", "/jw/ch09/users/register.html");
+				rd = request.getRequestDispatcher("/ch09/users/alertMsg.jsp");
+				rd.forward(request, response);
 			}
 			break;
 		case "logout":
-			System.out.println(session.getAttribute("uid"));
-			System.out.println(session.getAttribute("uname"));
 			session.invalidate();
 			response.sendRedirect("/jw/ch09/users/list");
 			break;
@@ -117,15 +97,14 @@ public class UserServiceController extends HttpServlet {
 				uid = request.getParameter("uid");
 				u = dao.getUserInfo(uid);
 				request.setAttribute("user", u);
-				RequestDispatcher rd = request.getRequestDispatcher("/ch09/users/updateView");
+				rd = request.getRequestDispatcher("/ch09/users/updateView");
 				rd.forward(request, response);
 			} else {
 				uid = request.getParameter("uid");
-				pwd = request.getParameter("pwd");
 				uname = request.getParameter("uname");
 				email = request.getParameter("email");
 
-				u = new User(uname, email);
+				u = new User(uid, uname, email);
 				dao.updateUser(u);
 
 				response.sendRedirect("/jw/ch09/users/list");
@@ -135,7 +114,7 @@ public class UserServiceController extends HttpServlet {
 			uid = request.getParameter("uid");
 			dao.deleteUser(uid);
 			response.sendRedirect("/jw/ch09/users/list");
-
+			break;
 		default:
 			System.out.println(request.getMethod() + "잘못된 경로 입니다.");
 		}

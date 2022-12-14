@@ -64,15 +64,15 @@ public class ListViewer2 extends HttpServlet {
 			data += "<td>";
 			
 			if(sessionUid == null || !sessionUid.equals(u.getUid()))
-				data += "<button onclick=\"location.href='/jw/ch09/users/update?uid='"+u.getUid()+"\"disabled>수정</button>";
+				data += "<button disabled>수정</button>";
 			else
-				data += "<button onclick=\"location.href='/jw/ch09/users/update?uid='"+u.getUid()+"\">수정</button>";
+				data += "<button onclick=\"location.href='/jw/ch09/users/update?uid="+u.getUid()+"'\">수정</button>";
 			
 			//관리자(admin)만이 삭제권한이 있음
 			if(sessionUid == null || !sessionUid.equals("admin")) {
-				data += "<button onclick=\"location.href='/jw/ch09/users/delete?uid='"+u.getUid()+"\"disabled>삭제</button>";
+				data += "<button disabled>삭제</button>";
 			} else
-				data += "<button onclick=\"location.href='/jw/ch09/users/delete?uid='"+u.getUid()+"\">삭제</button>";
+				data += "<button onclick=\"location.href='/jw/ch09/users/delete?uid="+u.getUid()+"'\">삭제</button>";
 			data += "</td>";
 			data += "</tr>";
 		}
