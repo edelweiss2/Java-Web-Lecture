@@ -13,6 +13,15 @@
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
 	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/error_404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/error_500.jsp</location>
+	</error-page>
+	
 	<context-param>
 	<param-name>menu</param-name>
 	<param-value>짬뽕 짜장면 탕수육</param-value>

@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="ch12.users2.*" %>
+<%
+	User u = (User)request.getAttribute("user");
+%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 수정</title>
+    <style>
+        td { text-align: center; padding: 3px; }
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h1>회원 수정</h1>
+    <hr>
+    <form action="/jw/ch12/users2/update" method="post">
+        <input type="hidden" name="uid" value=" <%= u.getUid() %>">
+        <table>
+            <tr>
+                <td>아이디:</td>
+                <td><input type="text" name="uid" value=" <%= u.getUid() %>" disabled></td>
+            </tr>
+            <tr>
+                <td>이름:</td>
+                <td><input type="text" name="uname" value="<%= u.getUname() %>"></td>
+            </tr>
+            <tr>
+                <td>이메일:</td>
+                <td><input type="email" name="email" value="<%= u.getEmail() %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="수정">
+                <input type="reset" value="취소"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

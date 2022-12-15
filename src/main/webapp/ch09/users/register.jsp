@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,7 +14,7 @@
 <body style="margin: 40px;">
     <h1>사용자 등록</h1>
     <hr>
-    <form action="/jw/ch09/users/register" method="post">        
+    <form action="/jw/ch12/users2/register" method="post">        
         <table>
             <tr>
                 <td>UID</td>

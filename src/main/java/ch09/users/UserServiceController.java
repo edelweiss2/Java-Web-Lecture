@@ -17,8 +17,8 @@ import org.mindrot.jbcrypt.BCrypt;
 /**
  * Servlet implementation class UserServiceController
  */
-@WebServlet({ "/ch09/users/list", "/ch09/users/login", "/ch09/users/logout", "/ch09/users/register",
-		"/ch09/users/update", "/ch09/users/delete" })
+//@WebServlet({ "/ch09/users/list", "/ch09/users/login", "/ch09/users/logout", "/ch09/users/register",
+//		"/ch09/users/update", "/ch09/users/delete" })
 public class UserServiceController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
