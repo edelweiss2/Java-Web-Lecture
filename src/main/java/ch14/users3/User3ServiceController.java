@@ -50,27 +50,28 @@ public class User3ServiceController extends HttpServlet {
 				uid = request.getParameter("uid");
 				pwd = request.getParameter("pwd");
 				u = dao.getUserInfo(uid);
-				
-				if (u.getUid() != null) {
+				if (u.getUid() != null) {		// uid 가 존재
 					if (BCrypt.checkpw(pwd, u.getPwd())) {
-						
+						// System.out.println(u.getUid() + ", " + u.getUname());
 						session.setAttribute("uid", u.getUid());
 						session.setAttribute("uname", u.getUname());
 						
+						// Welcome message
 						request.setAttribute("msg", u.getUname() + "님 환영합니다.");
 						request.setAttribute("url", "/jw/ch14/users3/list");
 						rd = request.getRequestDispatcher("/ch14/users3/alertMsg.jsp");
 						rd.forward(request, response);
 					} else {
-						// 패스워드가 틀린경우
+						// 재 로그인 페이지
 						request.setAttribute("msg", "잘못된 패스워드 입니다. 다시 입력하세요.");
-						request.setAttribute("url", "/jw/ch14/users3/login.jsp");
+						request.setAttribute("url", "/jw/ch14/users3/login");
 						rd = request.getRequestDispatcher("/ch14/users3/alertMsg.jsp");
 						rd.forward(request, response);
 					}
-				} else { // id 없음
+				} else {				// uid 가 없음
+					// 회원 가입 페이지로 안내
 					request.setAttribute("msg", "회원 가입 페이지로 이동합니다.");
-					request.setAttribute("url", "/jw/ch14/users3/register.jsp");
+					request.setAttribute("url", "/jw/ch14/users3/register");
 					rd = request.getRequestDispatcher("/ch14/users3/alertMsg.jsp");
 					rd.forward(request, response);
 				}

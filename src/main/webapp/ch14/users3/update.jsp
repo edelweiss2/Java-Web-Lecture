@@ -19,19 +19,19 @@
     <h1>회원 수정</h1>
     <hr>
     <form action="/jw/ch14/users3/update" method="post">
-        <input type="hidden" name="uid" value=" ${user.uid}">
+        <input type="hidden" name="uid" value="${user.uid}">
         <table>
             <tr>
                 <td>아이디:</td>
-                <td><input type="text" name="uid" value=" ${user.uid}" disabled></td>
+                <td><input type="text" name="uid" value="${user.uid}" disabled></td>
             </tr>
             <tr>
                 <td>이름:</td>
-                <td><input type="text" name="uname" value=" ${user.uname}"></td>
+                <td><input type="text" name="uname" value="${user.uname}"></td>
             </tr>
             <tr>
                 <td>이메일:</td>
-                <td><input type="email" name="email" value=" ${user.email}"></td>
+                <td><input type="email" name="email" value="${user.email}"></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="수정">

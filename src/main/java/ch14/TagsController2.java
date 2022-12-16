@@ -24,10 +24,8 @@ public class TagsController2 extends HttpServlet {
 		Address addr2 = new Address(34567, "용인", "한국");
 		Member m1 = new Member(101, "홍길동", addr1);
 		Member m2 = new Member(102, "김자바", addr2);
-		Member m3 = new Member(103, "제임스", new Address(98765, "뉴욕", "미국"));
-		Member m4 = new Member(104, "마리아", new Address(54789, "뉴욕", "미국"));
-		request.setAttribute("m1", m1);
-		request.setAttribute("m2", m2);
+		Member m3 = new Member(103, "제임스", new Address(98765,"뉴욕","미국"));
+		Member m4 = new Member(104, "마리아", new Address(54789,"LA","미국"));
 		
 		Member[] members = {m1, m2, m3, m4};
 		request.setAttribute("members", members);

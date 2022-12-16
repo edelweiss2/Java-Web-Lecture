@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                <table class="table">
+            <!--      <table class="table">
                     <tr>
                         <th>계산식</th>
                         <th>결과</th>
@@ -33,16 +33,16 @@
                     <tr><td>\${10+1}</td><td>${10+1}</td></tr>
                     <tr><td>\${"10"+"1"}</td><td>${"10"+"1"}</td></tr>
                     <tr><td>\${null+100}</td><td>${null+100}</td></tr>
-                 <%--    <tr><td>\${"안녕"+11}</td><td>${"안녕"+11}</td></tr>  --%>
-                 <%--   <tr><td>\${"Hello"+"World"}</td><td>${"Hello"+"World"}</td></tr> --%>
+                 	<tr><td>\${"안녕"+11}</td><td>${"안녕"+11}</td></tr> 
+              		<tr><td>\${"Hello"+"World"}</td><td>${"Hello"+"World"}</td></tr> 
                  	<tr><td></td><td></td></tr>
                  	<tr><td>\${10+10}</td><td>${10+10}</td></tr>
-         <%--        <tr><td>\${3 div 2}</td><td>${3 div 2}</td></tr>      --%>
+           			<tr><td>\${3 div 2}</td><td>${3 div 2}</td></tr> 
                  	<tr><td>\${100 % 9}</td><td>${100 % 9}</td></tr>
                  	<tr><td>\${100 mod 9}</td><td>${100 mod 9}</td></tr>
                  	<tr><td></td><td></td></tr>
                  	<tr><td>\${10==10}</td><td>${10==10}</td></tr>
-           <%--     <tr><td>\${10 eq 10}</td><td>${10 eq 10}</td></tr> 	--%> 
+             		<tr><td>\${10 eq 10}</td><td>${10 eq 10}</td></tr>  
                  	<tr><td>\${10 > 10}</td><td>${10 > 10}</td></tr>
                  	<tr><td>\${10 gt 10}</td><td>${10 gt 10}</td></tr>
                  	<tr><td>\${"hello" == "hello"}</td><td>${"hello" == "hello"}</td></tr>
@@ -56,7 +56,7 @@
                  	<tr><td>\${empty "hello"}</td><td>${empty "hello"}</td></tr>
                  	<tr><td>\${empty ""}</td><td>${empty ""}</td></tr>
                  	<tr><td>\${empty null}</td><td>${empty null}</td></tr>
-                </table>
+                </table>       -->
             </div>
             <div class="col-2"></div>
         </div>
