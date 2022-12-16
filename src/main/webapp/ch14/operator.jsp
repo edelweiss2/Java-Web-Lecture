@@ -37,12 +37,12 @@
                  <%--   <tr><td>\${"Hello"+"World"}</td><td>${"Hello"+"World"}</td></tr> --%>
                  	<tr><td></td><td></td></tr>
                  	<tr><td>\${10+10}</td><td>${10+10}</td></tr>
-                 	<tr><td>\${3 div 2}</td><td>${3 div 2}</td></tr>
+         <%--        <tr><td>\${3 div 2}</td><td>${3 div 2}</td></tr>      --%>
                  	<tr><td>\${100 % 9}</td><td>${100 % 9}</td></tr>
                  	<tr><td>\${100 mod 9}</td><td>${100 mod 9}</td></tr>
                  	<tr><td></td><td></td></tr>
                  	<tr><td>\${10==10}</td><td>${10==10}</td></tr>
-                 	<tr><td>\${10 eq 10}</td><td>${10 eq 10}</td></tr>
+           <%--     <tr><td>\${10 eq 10}</td><td>${10 eq 10}</td></tr> 	--%> 
                  	<tr><td>\${10 > 10}</td><td>${10 > 10}</td></tr>
                  	<tr><td>\${10 gt 10}</td><td>${10 gt 10}</td></tr>
                  	<tr><td>\${"hello" == "hello"}</td><td>${"hello" == "hello"}</td></tr>
