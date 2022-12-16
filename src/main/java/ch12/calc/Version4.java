@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class Version2
  */
 @WebServlet("/ch12/calc/ver3")
-public class Version3 extends HttpServlet {
+public class Version4 extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("eval", "0");
